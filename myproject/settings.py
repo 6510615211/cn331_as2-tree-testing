@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'app_registation.apps.AppRegistationConfig',
-    'app_courses.apps.AppCoursesConfig'
+    'app_courses.apps.AppCoursesConfig',
+    'app_users.apps.AppUsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+LOGIN_REDIRECT_URL = 'courses'
+LOGOUT_REDIRECT_URL = 'home'

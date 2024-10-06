@@ -1,7 +1,7 @@
 {% extends 'app_registation/components/base.html' %}
 
 {% block title %}
-    <title>ระบบลงทะเบียนและขอโควต้ารายวิชา</title>
+    <title>เข้าสู่ระบบระบบลงทะเบียนและขอโควต้ารายวิชา#หน้าแรกเว็บ</title>
 {% endblock %}
 
 {% block content %}
@@ -17,15 +17,12 @@
     <img src="https://engr.tu.ac.th/uploads/identity/Main_Logo.png" class="d-inline-block align-text-top" width="300" height="auto" alt="tse">
     <h1>ระบบลงทะเบียนและขอโควต้ารายวิชา</h1>
     <h2>!! Please Login to continue !!</h2>  
-    <form action="/process_login" method="post">
-        <label for="username">username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-
-        <label for="password">password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-
-        <input type="submit" value="LOG IN">
-        
+    <form action= '{% url "login" %}'  method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>
+            <button class="button button-primary" type="submit">LOG IN</button>
+        </p>
     </form>
 </div>
 {% endblock %}

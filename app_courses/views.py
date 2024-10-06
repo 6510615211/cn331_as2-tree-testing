@@ -6,4 +6,4 @@ from app_courses.models import Subject
 
 def courses(request):
     subjects = Subject.objects.all()
-    return render(request, "app_courses/courses.html", {"subjects":subjects})
+    return render(request, "app_courses/courses.html", {"Subject":subjects})
