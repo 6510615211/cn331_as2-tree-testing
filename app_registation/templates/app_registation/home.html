@@ -5,8 +5,18 @@
 {% endblock %}
 
 {% block content %}
-    <h1>ระบบลงทะเบียนและขอโควต้ารายวิชา#หน้าแรกเว็บ</h1>
-    <p>สวัสดี, คุณคือผู้ใช้</p>  
+<link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+<style>
+    body {background-color: #F6D1CE;}
+    h1   {font-family:'Mali'; font-weight:bolder;color:  rgb(6, 6, 34);}
+    h2    {font-family:'Mali'; font-weight:bold;color: red;}
+    label {font-family:'Mali'; font-weight:bolder;color:  rgb(6, 6, 34);}
+    input {font-family:'Mali'; font-weight:bolder;color:  rgb(6, 6, 34);}
+</style>
+<div class="text-center">
+    <img src="https://engr.tu.ac.th/uploads/identity/Main_Logo.png" class="d-inline-block align-text-top" width="300" height="auto" alt="tse">
+    <h1>ระบบลงทะเบียนและขอโควต้ารายวิชา</h1>
+    <h2>!! Please Login to continue !!</h2>  
     <form action="/process_login" method="post">
         <label for="username">ชื่อผู้ใช้:</label>
         <input type="text" id="username" name="username" required><br><br>
@@ -16,5 +26,6 @@
 
         <input type="submit" value="เข้าสู่ระบบ">
     </form>
+</div>
 {% endblock %}
     

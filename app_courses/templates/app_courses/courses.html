@@ -5,8 +5,12 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    body {background-color: #F6D1CE;}
+    </style>
+  {{Subject}}
     <h1 class="text-center">ระบบลงทะเบียนและขอโควต้ารายวิชา#หน้าแสดงรายวิชา</h1>
-    <p class="text-center">รายวิชาทั้งหมดที่เปิดให้ลงทะบียน</p>
+    <p class="text-center">รายวิชาทั้งหมดที่เปิดให้ลงทะเบียน</p>
     <table class="table" method='post' action='recheck'>
       {% csrf_token %}
         <thead>
@@ -21,7 +25,7 @@
           </tr>
         </thead>
         <tbody>
-            {% for subject in Subject%}
+            {% for subject in Subject %}
                 <tr>
                     <th scope="">{{subject.course_id}}</th>
                     <td>{{subject.course_name}}</td>
