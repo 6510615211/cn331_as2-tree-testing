@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MyappConfig(AppConfig):
+class AppRegistationConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "myapp"
+    name = "app_registation"

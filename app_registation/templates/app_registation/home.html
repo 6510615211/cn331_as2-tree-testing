@@ -1,0 +1,20 @@
+{% extends 'app_registation/components/base.html' %}
+
+{% block title %}
+    <title>ระบบลงทะเบียนและขอโควต้ารายวิชา#หน้าแรกเว็บ</title>
+{% endblock %}
+
+{% block content %}
+    <h1>ระบบลงทะเบียนและขอโควต้ารายวิชา#หน้าแรกเว็บ</h1>
+    <p>สวัสดี, คุณคือผู้ใช้</p>  
+    <form action="/process_login" method="post">
+        <label for="username">ชื่อผู้ใช้:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">รหัสผ่าน:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="เข้าสู่ระบบ">
+    </form>
+{% endblock %}
+    
