@@ -1,3 +1,4 @@
+
 {% extends 'app_registation/components/base.html' %}
 
 {% block title %}
@@ -22,7 +23,7 @@
     <table class="table table-bordered border-info" method='post' action='recheck'>
       {% csrf_token %}
         <thead>
-          <tr >
+          <tr>
             <th scope="col">course_id</th>
             <th scope="col">subject</th>
             <th scope="col">semester</th>
@@ -32,21 +33,20 @@
           </tr>
         </thead>
         <tbody>
-          {% for subject in Subject %}
+          {% for subject in subjects %}
             <tr>
-              <th scope="">{{subject.course_id}}</th>
+              <th scope="row">{{subject.course_id}}</th>
               <td>{{subject.course_name}}</td>
               <td>{{subject.course_semester}}</td>    
               <td>{{subject.course_amount}}</td>
               <td>{{subject.course_status}}</td>
               <td>
-              <form method="POST" action="/enroll_check">
-                {% csrf_token %}
-                <input type="hidden" name="subject_id" value="{{ subject.course_id }}">  
-                <input type="hidden" name="course_name" value="{{ subject.course_name }}">  
-                <input type="hidden" name="semester" value="{{ subject.course_semester }}">
-                <button class="button button-primary" type="submit">ขอโควต้า</button>
-              </form> </td>
+                <form method="post" action="{% url 'enroll_check' %}">
+                  {% csrf_token %}
+                  <input type="hidden" name="course_id" value="{{ subject.id }}">
+                  <button class="button button-primary" type="submit">Enroll</button>
+                </form>
+              </td>
             </tr>
           {% endfor %}
         </tbody>

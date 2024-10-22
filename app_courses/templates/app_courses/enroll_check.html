@@ -1,0 +1,43 @@
+{% extends 'app_registation/components/base.html' %}
+
+{% block title %}
+    <title>ระบบลงทะเบียนและขอโควต้ารายวิชา</title>
+{% endblock %}
+
+{% block content %}
+<style>
+    body {background-color: #F6D1CE;}
+    p{color: #142bf8}
+      th {              
+      text-align: center;          
+  }
+  td {
+      text-align: center;          
+  }
+    </style>
+    <p> </p>
+    <h1 class="text-center">ตรวจสอบรายวิชาที่ขอโควต้าสำเร็จ</h1>
+    <p class="text-center">enroll succesful</p>
+    <table class="table table-bordered border-info" method='post' action='recheck'>
+      {% csrf_token %}
+        <thead>
+          <tr>
+            <th scope="col">course_id</th>
+            <th scope="col">subject</th>
+            <th scope="col">semester</th>
+            <th scope="col">ยกเลิกโควต้า</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for subject in Subject %}
+            <tr>
+              <th scope="">{{subject.course_id}}</th>
+              <td>{{subject.course_name}}</td>
+              <td>{{subject.course_semester}}</td>    
+              {% csrf_token %}
+              <td><a href='#' class='btn btn-danger'>ยกเลิกโควต้า</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
