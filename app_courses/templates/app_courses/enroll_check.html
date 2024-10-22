@@ -29,21 +29,20 @@
           </tr>
         </thead>
         <tbody>
-          {% for subject in Subject %}
-            <tr>
-              <th>CN202</th>
-              <td>Data Algorithm 1</td>
-              <td>1/2567</td>    
-              {% csrf_token %}
-              <td><a href='#' class='btn btn-danger'>ยกเลิกโควต้า</a></td>
-            </tr> 
+          <!--{% for subject in Subject %}-->
               <!--<th scope="">{{subject.course_id}}</th>
               <td>{{subject.course_name}}</td>
               <td>{{subject.course_semester}}</td>    
               {% csrf_token %}
               <td><a href='#' class='btn btn-danger'>ยกเลิกโควต้า</a></td>
             </tr>-->
-          {% endfor %}
+          <!--{% endfor %}-->
+          <tr>
+            <th>CN202</th>
+            <td>Data Algorithm 1</td>
+            <td>1/2567</td>
+            <td><a href='#' class='btn btn-danger'>ยกเลิกโควต้า</a></td>
+          </tr>
         </tbody>
     </table>
 {% endblock %}
