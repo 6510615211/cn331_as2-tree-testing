@@ -4,7 +4,7 @@ from app_courses.models import Subject
 
 # Create your views here.
 
-
+  
 def courses(request):
     subjects = Subject.objects.all()
     if request.method == 'POST':
@@ -21,7 +21,7 @@ def courses(request):
 
    
 
-def enroll_check(request):
+'''def enroll_check(request):
     subjects = Subject.objects.all()
     if request.method == 'POST':
         subject_id = request.POST.get('subject_id')
@@ -34,5 +34,8 @@ def enroll_check(request):
             
             subject = get_object_or_404(Subject, id=subject_id)
         return redirect('courses')
-    return render(request,'app_registation/enroll_check.html')
+    return render(request,'app_courses/enroll_check.html')'''
+    
 
+def enroll_check(request):
+    return render(request,'app_courses/enroll_check.html')
