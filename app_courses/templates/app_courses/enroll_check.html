@@ -29,20 +29,14 @@
             </tr>
         </thead>
         <tbody>
-          <!--{% for subject in Subject %}-->
+          {% for subject in Subject %}
               <!--<th scope="">{{subject.course_id}}</th>
               <td>{{subject.course_name}}</td>
               <td>{{subject.course_semester}}</td>    
               {% csrf_token %}
               <td><a href='#' class='btn btn-danger'>ยกเลิกโควต้า</a></td>
             </tr>-->
-          <!--{% endfor %}-->
-            <tr>
-                <th scope="col">CN202</th>
-                <th scope="col">Data Algorithm 1</th>
-                <th scope="col">1/2567</th>
-                <th><a href='#' class='btn btn-danger'>ยกเลิกโควต้า</a></th>
-            </tr>
+          {% endfor %}
         </tbody>
     </table>
 {% endblock %}

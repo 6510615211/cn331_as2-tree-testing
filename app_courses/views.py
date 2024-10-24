@@ -19,7 +19,7 @@ def courses(request):
         #return redirect('courses')    
     return render(request, "app_courses/courses.html", {"Subject":subjects})
 
-   
+
 
 '''def enroll_check(request):
     subjects = Subject.objects.all()
