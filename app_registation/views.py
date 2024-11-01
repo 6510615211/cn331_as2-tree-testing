@@ -12,5 +12,5 @@ def about(request):
 def enroll_check(request):
     return render(request,'app_registation/enroll_check.html')
 
-def regist(request):
-    return render(request,'app_registation/regist.html')    
+#def regist(request):
+#   return render(request,'app_registation/regist.html')    
