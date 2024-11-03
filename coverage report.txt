@@ -1,53 +1,46 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2820
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 (base) yanatthan@Yanatthans-MacBook-Pro-2 cn331_as2-tree-testing % coverage report\
-Name                                                         				       Stmts   Miss  Cover\
---------------------------------------------------------------------------------------------------------------------------\
-app_courses/__init__.py                                          				0      	0     100%\
-app_courses/admin.py                                             				6      	0     100%\
-app_courses/apps.py                                              				4      	0     100%\
-app_courses/migrations/0001_initial.py                           			5      	0     100%\
-app_courses/migrations/0002_alter_subject_course_status.py       		4      	0     100%\
-app_courses/migrations/0003_student.py                           			4      	0     100%\
-app_courses/migrations/__init__.py                               			0      	0     100%\
-app_courses/models.py                                           				25      	1      96%\
-app_courses/tests.py                                            				80     	17    79%\
-app_courses/urls.py                                              				3      	0     100%\
-app_courses/views.py                                             				8      	1      88%\
-app_registation/__init__.py                                      				0      	0     100%\
-app_registation/admin.py                                         				1      	0     100%\
-app_registation/apps.py                                          				4      	0     100%\
-app_registation/migrations/0001_initial.py                      			5      	0     100%\
-app_registation/migrations/__init__.py                           			0      	0     100%\
-app_registation/models.py                                       				14      	2     86%\
-app_registation/tests.py                                        				19      	0     100%\
-app_registation/urls.py                                          				3      	0     100%\
-app_registation/views.py                                         				8      	0     100%\
-app_users/__init__.py                                            				0      	0     100%\
-app_users/admin.py                                               				1      	0     100%\
-app_users/apps.py                                                				4      	0     100%\
-app_users/migrations/0001_initial.py                             			5      	0     100%\
-app_users/migrations/__init__.py                                 				0     	0     100%\
-app_users/models.py                                             				11      	4     64%\
-app_users/tests.py                                              				14      	5     64%\
-app_users/urls.py                                                				3      	0     100%\
-app_users/views.py                                               				1      	0     100%\
-manage.py                                                       					11      	2     82%\
-myproject/__init__.py                                            				0      	0     100%\
-myproject/asgi.py                                                				4      	4     0%\
-myproject/manage.py                                             				11     	11    0%\
-myproject/myproject/__init__.py                                  				0      	0     100%\
-myproject/myproject/asgi.py                                      				4      	4      0%\
-myproject/myproject/settings.py                                 				18     	18    0%\
-myproject/myproject/urls.py                                      				3      	3     0%\
-myproject/myproject/wsgi.py                                      				4      	4     0%\
-myproject/settings.py                                           				20      	0     100%\
-myproject/urls.py                                                					3      	0     100%\
-myproject/wsgi.py                                                				4      	4     0%\
---------------------------------------------------------------------------------------------------------------------------------\
-TOTAL                                                          					314     80    75%}
+(base) yanatthan@Yanatthans-MacBook-Pro-2 cn331_as2-tree-testing % coverage report\
+Name                                                         				       Stmts   Miss  Cover
+--------------------------------------------------------------------------------------------------------------------------
+app_courses/__init__.py                                          				0      	0     100%
+app_courses/admin.py                                             				6      	0     100%
+app_courses/apps.py                                              				4      	0     100%
+app_courses/migrations/0001_initial.py                           				5      	0     100%
+app_courses/migrations/0002_alter_subject_course_status.py       				4      	0     100%
+app_courses/migrations/0003_student.py                           				4      	0     100%
+app_courses/migrations/__init__.py                               				0      	0     100%
+app_courses/models.py                                           				25      1      96%
+app_courses/tests.py                                            				77     	17     78%
+app_courses/urls.py                                              				3      	0     100%
+app_courses/views.py                                             				8      	1      88%
+app_registation/__init__.py                                      				0      	0     100%
+app_registation/admin.py                                         				1      	0     100%
+app_registation/apps.py                                          				4      	0     100%
+app_registation/migrations/0001_initial.py                      				5      	0     100%
+app_registation/migrations/__init__.py                           				0      	0     100%
+app_registation/models.py                                       				14      2      86%
+app_registation/tests.py                                        				19      0     100%
+app_registation/urls.py                                          				3      	0     100%
+app_registation/views.py                                         				8      	0     100%
+app_users/__init__.py                                            				0      	0     100%
+app_users/admin.py                                               				1      	0     100%
+app_users/apps.py                                                				4      	0     100%
+app_users/migrations/0001_initial.py                             				5      	0     100%
+app_users/migrations/__init__.py                                 				0     	0     100%
+app_users/models.py                                             				11      4      64%
+app_users/tests.py                                              				14      5      64%
+app_users/urls.py                                                				3      	0     100%
+app_users/views.py                                               				1      	0     100%
+manage.py                                                       				11      2      82%
+myproject/__init__.py                                            				0      	0     100%
+myproject/asgi.py                                                				4      	4       0%
+myproject/manage.py                                             				11     	11      0%
+myproject/myproject/__init__.py                                  				0      	0     100%
+myproject/myproject/asgi.py                                      				4      	4       0%
+myproject/myproject/settings.py                                 				18     	18      0%
+myproject/myproject/urls.py                                      				3      	3       0%
+myproject/myproject/wsgi.py                                      				4      	4       0%
+myproject/settings.py                                           				20      0     100%
+myproject/urls.py                                                				3      	0     100%
+myproject/wsgi.py                                                				4      	4       0%
+--------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                          					310     80     74%

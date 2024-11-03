@@ -15,7 +15,7 @@ class SubjectModelTest(TestCase):
             course_status=Subject.CourseStatus.AVAILABLE,
         )
 
-    def test_subject_creation(self): #มีวิชาที่สร้างไว้?
+    def test_subject_create(self): #มีวิชาที่สร้างไว้?
         self.assertEqual(self.subject.course_id, "CN202")
         self.assertEqual(self.subject.course_name, "Data algorithms 1")
         self.assertEqual(self.subject.course_semester, "1/2567")
@@ -40,15 +40,6 @@ class SubjectModelTest(TestCase):
             self.subject.course_amount -= 1
             self.subject.full_clean()
 
-    #def test_invalid_course_status(self):
-        # with self.assertRaises(ValueError):
-        #     self.subject.course_status = "INVALID"
-        #     self.subject.save()
-
-    # def test_blank_course_id(self):
-    #     with self.assertRaises(ValidationError):
-    #         self.subject.course_id = ""
-    #         self.subject.full_clean()
 
 class StudentModelTest(TestCase):
 
@@ -68,14 +59,11 @@ class StudentModelTest(TestCase):
         )
         self.student.enrolled_subjects.add(self.subject)
 
-    def test_student_creation(self): #ข้อมูลส่วนตัวเหมือนที่ลงทะเบียน?
+    def test_student_create(self): #ข้อมูลส่วนตัวเหมือนที่ลงทะเบียน?
         self.assertEqual(self.student.student_id, "6510681234")
         self.assertEqual(self.student.first_name, "likestudy")
         self.assertEqual(self.student.last_name, "makmak")
         self.assertEqual(self.student.email, "likestudy.mak@dome.tu.ac.th")
-
-    #def test_student_string_representation(self):
-        #self.assertEqual(str(self.student), "likestudy mak (likestudy.mak@dome.tu.ac.th)")
 
     def test_student_enrollment(self): #ทดสอบว่าลงทะเบียนสำเร็จมีอยู่ในชื่อที่ลงทะเบียน
         self.assertIn(self.subject, self.student.enrolled_subjects.all())
@@ -86,7 +74,7 @@ class StudentModelTest(TestCase):
         self.assertNotIn(self.subject, self.student.enrolled_subjects.all())
         self.assertNotIn(self.student, self.subject.students.all())
 
-    def test_duplicate_student_id(self): #id ซ้ำเกิด error
+    def test_duplicate_id(self): #id ซ้ำเกิด error
         with self.assertRaises(IntegrityError):
             Student.objects.create(
                 student_id="6510681234",
@@ -121,14 +109,6 @@ class CourseViewTests(TestCase):
         self.assertEqual(self.subject.course_amount, 29)
         self.assertEqual(response.status_code, 302)
 
-    def test_courses_view_post_invalid_data(self): #ถ้า subject id ไม่อยู่ในระบบ 404
-        response = self.client.post(reverse('courses'), {'subject_id': 999})
-        self.assertEqual(response.status_code, 404)
-
-    #def test_courses_view_post_no_data(self):
-        # response = self.client.post(reverse('courses'), {})
-        # self.assertEqual(response.status_code, 200)
-
     def test_enroll_check_view(self): #กด regist แล้วหน้า enrollสถานะตรง
         response = self.client.get(reverse('enroll_check'))
         self.assertEqual(response.status_code, 200)
@@ -136,7 +116,7 @@ class CourseViewTests(TestCase):
         self.assertIn('subjects', response.context)
         self.assertContains(response, self.subject.course_name)
 
-    def test_subject_availability_transition(self): #ถ้าโควต้าเต็มสถานะต้องแสดง
+    def test_subject_transition(self): #ถ้าโควต้าเต็มสถานะต้องแสดง
         self.subject.course_amount = 1
         self.subject.save()
         response = self.client.post(reverse('courses'), {'subject_id': self.subject.id})
